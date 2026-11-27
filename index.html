@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free SEO, AEO & GEO Website Audit Tool | Tech and Support</title>
+<meta name="description" content="Analyze any website with our SEO, AEO, GEO and technical audit tool. Discover AI crawler issues, website performance gaps and actionable optimization recommendations.">
+<link rel="canonical" href="https://tools.techandsupport.com/">
+<link rel="icon" href="logo.png">
+<meta property="og:title" content="Free SEO, AEO & GEO Website Audit Tool | Tech and Support">
+<meta property="og:description" content="Real SEO, AEO, GEO and technical checks with a branded PDF report.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://tools.techandsupport.com/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Tech and Support","url":"https://www.techandsupport.com","email":"info@techandsupport.com","telephone":"+91 9772222016"},{"@type":"SoftwareApplication","name":"Tech and Support Website Audit Tool","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://tools.techandsupport.com/"}]}</script>
+<style>
+:root{--navy:#0b2447;--blue:#1769e0;--sky:#4fb3ff;--teal:#14b8a6;--ice:#eef6ff;--line:#d6e6fb;--ink:#26405f;--ok:#16a34a;--warn:#d97706;--bad:#dc2626;--na:#8aa0bb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 "DM Sans",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,var(--ice) 40%,#fff)}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;color:var(--navy);line-height:1.2;margin:0 0 .5em}
+a{color:var(--blue)}:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px "Space Grotesk";color:var(--navy);text-decoration:none}
+.brand img{height:40px;width:auto}
+nav{display:flex;gap:18px;margin-left:auto;font-size:14px}nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--blue)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--blue);color:#fff;font:700 15px "DM Sans";padding:12px 22px;border-radius:10px;text-decoration:none}
+.btn:hover{background:#0f56bd}.btn.alt{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}.btn[disabled]{opacity:.6;cursor:wait}
+.hero{padding:64px 0 36px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-120px -10% auto auto;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,#bfe0ff 0,transparent 68%);z-index:-1}
+.hero h1{font-size:clamp(30px,5vw,50px);max-width:20ch}
+.hero p.lead{max-width:62ch;font-size:18px}
+.pillars{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-weight:700;color:var(--navy)}
+.pillar span{display:block;font-weight:400;font-size:13px;color:var(--ink)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(23,105,224,.08)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input,select{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);min-width:0}
+input:focus{border-color:var(--blue);outline:0}
+#url{flex:1 1 320px}
+details.adv{margin-top:14px}details.adv summary{cursor:pointer;color:var(--blue);font-weight:700}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
+.hint{font-size:13px;color:#5a7391;margin:10px 0 0}
+.err{color:var(--bad);font-weight:700;margin-top:10px}
+section{padding:44px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cols .card{padding:20px}.cols h3{font-size:18px}
+.cols ul{margin:0;padding-left:18px;font-size:14px}
+.steps{counter-reset:s}.steps .card{position:relative;padding-top:34px}
+.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:20px;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:700 15px/30px "Space Grotesk";text-align:center}
+/* dashboard */
+#dash{display:none;padding:36px 0}
+.prog{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin:14px 0}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .4s}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0}
+.sc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.ring{--p:0;--c:var(--blue);width:96px;height:96px;margin:0 auto 8px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center}
+.ring b{width:74px;height:74px;border-radius:50%;background:#fff;display:grid;place-items:center;font:700 24px "Space Grotesk";color:var(--navy)}
+.sc small{display:block;color:#5a7391}.sc.big .ring{width:120px;height:120px}.sc.big .ring b{width:94px;height:94px;font-size:30px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 18px}.stat{background:var(--ice);border-radius:10px;padding:6px 14px;font-size:14px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 16px;cursor:pointer;font:700 14px "DM Sans";color:var(--navy)}
+.tab[aria-selected=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chk{border:1px solid var(--line);background:#fff;border-radius:12px;margin:8px 0}
+.chk summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;padding:12px 14px}
+.chk summary::-webkit-details-marker{display:none}
+.dot{flex:none;width:22px;height:22px;border-radius:50%;color:#fff;font:700 13px/22px sans-serif;text-align:center}
+.pass .dot{background:var(--ok)}.warn .dot{background:var(--warn)}.fail .dot{background:var(--bad)}.na .dot,.nt .dot{background:var(--na)}
+.chk .t{flex:1;font-weight:700;color:var(--navy)}.chk .p{font-size:13px;color:#5a7391;white-space:nowrap}
+.chk .body{padding:0 14px 14px 48px;font-size:14px}
+.sev{font-size:12px;font-weight:700;border-radius:6px;padding:2px 8px;margin-left:6px}
+.sev.High{background:#fee2e2;color:#991b1b}.sev.Medium{background:#fef3c7;color:#92400e}.sev.Low{background:#dbeafe;color:#1e40af}
+pre{background:var(--navy);color:#dff0ff;padding:12px;border-radius:10px;overflow:auto;font-size:12.5px;white-space:pre-wrap;word-break:break-word}
+.note{background:var(--ice);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;margin:16px 0}
+.deliver{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+.msg{margin-top:10px;font-weight:700}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+footer{background:var(--navy);color:#c9dcf5;padding:34px 0;font-size:14px}footer a{color:#9fd2ff}footer h3{color:#fff}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}.faq summary{cursor:pointer;font-weight:700;color:var(--navy)}
+@media(max-width:760px){nav{display:none}header.top .btn{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="logo.png" alt="Tech and Support logo"><span>Tech and Support</span></a>
+  <nav aria-label="Main"><a href="#audit">Website Audit</a><a href="#analyze">What We Analyze</a><a href="#how">How It Works</a><a href="#faq">FAQs</a><a href="https://www.techandsupport.com" rel="noopener">Contact</a></nav>
+  <a class="btn" href="#audit">Analyze My Website</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1>Free SEO, AEO & GEO Website Analysis Tool</h1>
+  <p class="lead">Is your website ready for Google, AI search and the future of digital discovery? Paste your URL to get real checks, a scored dashboard, fix-by-fix guidance and a branded PDF report you can download or email.</p>
+  <div class="pillars"><div class="pillar">SEO<span>Search visibility</span></div><div class="pillar">AEO<span>Answer visibility</span></div><div class="pillar">GEO<span>AI visibility</span></div></div>
+
+  <div class="card" id="audit">
+    <h2 style="font-size:22px">Start your free website audit</h2>
+    <div class="row">
+      <input id="url" type="url" inputmode="url" placeholder="https://www.example.com" aria-label="Website URL" autocomplete="url">
+      <button class="btn" id="go">Start Free Website Audit</button>
+    </div>
+    <details class="adv"><summary>Advanced options</summary>
+      <div class="grid2">
+        <input id="biz" placeholder="Business name"><input id="ind" placeholder="Industry">
+        <input id="city" placeholder="City / Country"><input id="kw" placeholder="Target keywords (comma separated)">
+      </div>
+    </details>
+    <div class="err" id="err" role="alert"></div>
+    <p class="hint">No account needed. We read only publicly available pages. By running an audit you agree to our <a href="https://www.techandsupport.com">Privacy Policy and Terms</a>.</p>
+  </div>
+</div></div>
+
+<div id="dash"><div class="wrap">
+  <h2 id="dTitle">Audit results</h2>
+  <div class="prog" id="progWrap"><i id="prog"></i></div><div id="progTxt" class="hint"></div>
+  <div id="results" hidden>
+    <div class="scores" id="scores"></div>
+    <div class="stats" id="stats"></div>
+    <h3>Top issues to fix first</h3><div id="top5"></div>
+    <h3 style="margin-top:26px">Detailed results</h3>
+    <div class="tabs" role="tablist" id="tabs"></div><div id="list"></div>
+    <div class="note"><b>Technical readiness is not AI visibility.</b> The GEO score shows whether AI crawlers can reach and understand your site. It does not show whether ChatGPT, Gemini, Perplexity or Copilot actually recommend your business; that is Not Tested here. Scores are Tech and Support scores, not official Google or AI-platform scores.</div>
+    <div class="card"><h3>Get your complete report</h3>
+      <div class="deliver">
+        <input id="rn" placeholder="Name (optional)" aria-label="Name"><input id="rb" placeholder="Business name (optional)" aria-label="Business name">
+        <input id="re" type="email" placeholder="Email address" aria-label="Email address">
+      </div>
+      <div class="row"><button class="btn" id="dl">Download PDF Report</button><button class="btn alt" id="em">Email My PDF Report</button><a class="btn alt" href="mailto:info@techandsupport.com?subject=Website%20audit%20consultation">Request Professional Consultation</a></div>
+      <div class="msg" id="dmsg" role="status"></div>
+    </div>
+  </div>
+</div></div>
+
+<section id="analyze"><div class="wrap">
+  <h2>What does our website audit analyze?</h2>
+  <div class="cols">
+    <div class="card"><h3>SEO</h3><ul><li>HTTPS, title, description, canonical</li><li>Headings, images, internal links</li><li>robots.txt, sitemap, viewport, language</li><li>Google PageSpeed performance</li></ul></div>
+    <div class="card"><h3>AEO</h3><ul><li>Direct answers in the opening</li><li>Question-based headings, FAQ content</li><li>FAQ and HowTo schema</li><li>Lists, tables, readability</li></ul></div>
+    <div class="card"><h3>GEO</h3><ul><li>Access for GPTBot, ClaudeBot, PerplexityBot and more</li><li>Organization schema and sameAs links</li><li>About, contact and source citations</li><li>llms.txt and ai.txt (optional signals)</li></ul></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How does the audit work?</h2>
+  <div class="cols steps">
+    <div class="card"><h3>Enter your URL</h3>Paste any public website address.</div>
+    <div class="card"><h3>We analyze it</h3>We fetch the page, robots.txt, sitemap and AI files, then run each check on what we observe.</div>
+    <div class="card"><h3>See the dashboard</h3>Scores, issues and corrected code examples appear right away.</div>
+    <div class="card"><h3>Get your PDF</h3>Download it, or email it to yourself or your team.</div>
+  </div>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <details><summary>What is Answer Engine Optimization (AEO)?</summary><p>AEO structures your content so search and AI assistants can lift a clear answer from it: direct opening answers, question headings, FAQ sections and structured data.</p></details>
+  <details><summary>What is Generative Engine Optimization (GEO)?</summary><p>GEO prepares your site to be found, read and cited by generative AI systems: crawler access, clear brand and entity information, and extractable, trustworthy content.</p></details>
+  <details><summary>Does allowing AI crawlers guarantee AI recommendations?</summary><p>No. Access is a prerequisite, not a guarantee. This audit measures technical readiness only.</p></details>
+  <details><summary>Is llms.txt mandatory for Google rankings?</summary><p>No. llms.txt is an optional, emerging convention and not a Google ranking factor. We report it as an optional signal.</p></details>
+  <details><summary>Is the basic audit free?</summary><p>Yes. No login is needed to run an audit, view results or download the PDF.</p></details>
+  <details><summary>Can Tech and Support implement the fixes?</summary><p>Yes. Write to <a href="mailto:info@techandsupport.com">info@techandsupport.com</a> for technical SEO, schema, performance and security work.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <h3>Tech and Support</h3><p>Your Digital Transformation Partner.</p>
+  <p>Website: <a href="https://www.techandsupport.com">www.techandsupport.com</a> &nbsp;|&nbsp; Email: <a href="mailto:info@techandsupport.com">info@techandsupport.com</a> &nbsp;|&nbsp; Support: <a href="mailto:support@techandsupport.com">support@techandsupport.com</a> &nbsp;|&nbsp; WhatsApp: +91 9772222016</p>
+  <p>&copy; <span id="yr"></span> Tech and Support. Scores are independent estimates, not official Google or AI platform scores.</p>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+/* ===== CONFIG ===== */
+const CFG={
+  worker:"",   // OPTIONAL: your own Cloudflare Worker / backend URL that returns the raw page for ?url=. Strongly recommended for production. Public proxies below are only a fallback.
+  psiKey:"",                                      // optional Google PageSpeed API key
+  emailEndpoint:"",                               // YOUR backend URL that accepts the report and sends the email (see README in chat). Empty = "Not Configured".
+  weights:{SEO:.4,AEO:.3,GEO:.3}
+};
+const CO={name:"Tech and Support",site:"www.techandsupport.com",mail:"info@techandsupport.com",support:"support@techandsupport.com",tel:"+91 9772222016",tag:"Your Digital Transformation Partner"};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+$("yr").textContent=new Date().getFullYear();
+let R=null,LOGO=null;
+
+/* ===== fetch helpers ===== */
+async function get(u,ms=15000){
+  const tries=[];
+  if(CFG.worker)tries.push({f:x=>CFG.worker+(CFG.worker.includes("?")?"&":"?")+"url="+encodeURIComponent(x),raw:true});
+  tries.push(
+    {f:x=>"https://api.allorigins.win/get?url="+encodeURIComponent(x),raw:false},
+    {f:x=>"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(x),raw:true},
+    {f:x=>"https://api.allorigins.win/raw?url="+encodeURIComponent(x),raw:true},
+    {f:x=>"https://corsproxy.io/?url="+encodeURIComponent(x),raw:true}
+  );
+  let fallback=null;
+  for(const t of tries){
+    try{
+      const c=new AbortController(),tm=setTimeout(()=>c.abort(),ms);
+      const r=await fetch(t.f(u),{signal:c.signal});clearTimeout(tm);
+      let res;
+      if(t.raw){const b=await r.text();res={code:r.status,body:b}}
+      else{const j=await r.json();res={code:j.status&&j.status.http_code||r.status,body:typeof j.contents==="string"?j.contents:""}}
+      if(res.code>=200&&res.code<300&&res.body)return res;   // good answer
+      if(!fallback&&res.code)fallback=res;                   // 401/403/404 etc: try the next route before giving up
+    }catch(e){}
+  }
+  return fallback;
+}
+function normUrl(v){
+  v=v.trim();if(!v)throw"Enter a website URL.";
+  if(!/^https?:\/\//i.test(v))v="https://"+v;
+  let u;try{u=new URL(v)}catch(e){throw"That URL is not valid. Example: https://www.example.com"}
+  const h=u.hostname;
+  if(!/\./.test(h)||/^(localhost|127\.|10\.|192\.168\.|169\.254\.|0\.|172\.(1[6-9]|2\d|3[01])\.)/.test(h)||/\.(local|internal)$/.test(h)||h.includes(":"))throw"Only public websites can be audited.";
+  return u;
+}
+function robotsAllows(txt,bot){
+  const groups=[];let cur=null,last="";
+  txt.split(/\r?\n/).forEach(l=>{l=l.replace(/#.*/,"").trim();const m=l.match(/^([\w-]+)\s*:\s*(.*)$/);if(!m)return;
+    const k=m[1].toLowerCase(),v=m[2].trim();
+    if(k==="user-agent"){if(last!=="user-agent"){cur={ua:[],dis:[],al:[]};groups.push(cur)}cur.ua.push(v.toLowerCase())}
+    else if(cur&&k==="disallow")cur.dis.push(v);else if(cur&&k==="allow")cur.al.push(v);last=k});
+  const g=groups.find(x=>x.ua.includes(bot.toLowerCase()))||groups.find(x=>x.ua.includes("*"));
+  if(!g)return true;return !(g.dis.includes("/")&&!g.al.includes("/"));
+}
+
+/* ===== audit ===== */
+const BOTS=[["GPTBot","OpenAI (training)"],["OAI-SearchBot","OpenAI (search)"],["ChatGPT-User","OpenAI (user fetch)"],["ClaudeBot","Anthropic (training)"],["Claude-SearchBot","Anthropic (search)"],["PerplexityBot","Perplexity (search)"],["Google-Extended","Google AI (training control)"],["Applebot-Extended","Apple AI (training control)"],["Amazonbot","Amazon"]];
+function step(p,t){$("prog").style.width=p+"%";$("progTxt").textContent=t}
+
+async function runAudit(u){
+  const base=u.origin,checks=[],ctx={biz:$("biz").value.trim(),kw:$("kw").value.trim()};
+  const add=(m,t,max,ratio,ev,fix,sev,url)=>{
+    const st=ratio===null?"na":ratio>=1?"pass":ratio>0?"warn":"fail";
+    checks.push({m,t,max,pts:ratio===null?0:Math.round(max*ratio*10)/10,st,ev,fix:fix||null,sev:sev||(st==="fail"?"High":"Medium"),url:url||u.href})};
+  const nt=(m,t,max,ev)=>checks.push({m,t,max,pts:0,st:"nt",ev,fix:null,sev:"Low",url:u.href});
+
+  step(8,"Fetching your page…");
+  const page=await get(u.href);
+  if(!page)throw"We could not reach the page through the fetch service. Check the URL and try again.";
+  if(page.code>=400||!page.body)throw(page.code===401||page.code===403||page.code===429?"The site or the fetch service refused automated access (HTTP "+page.code+") on every route we tried. Some sites block audit tools. Try another page of the site, or ask Tech and Support to enable the private fetch service.":page.code===404?"The page returned HTTP 404 (not found). Check the URL.":"The website returned HTTP "+(page.code||"no response")+", so it could not be analyzed.");
+  step(25,"Reading robots.txt, sitemap and AI files…");
+  const [rb,sm,l1,l2,l3,ai]=await Promise.all([get(base+"/robots.txt"),get(base+"/sitemap.xml"),get(base+"/llms.txt"),get(base+"/llms-full.txt"),get(base+"/llms-small.txt"),get(base+"/.well-known/ai.txt")]);
+  step(45,"Checking Google PageSpeed…");
+  let psi=null;
+  try{const r=await fetch("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url="+encodeURIComponent(u.href)+(CFG.psiKey?"&key="+CFG.psiKey:""));
+    if(r.ok)psi=await r.json()}catch(e){}
+  step(70,"Scoring checks…");
+
+  const doc=new DOMParser().parseFromString(page.body,"text/html");
+  const q=s=>doc.querySelector(s),qa=s=>[...doc.querySelectorAll(s)];
+  const text=(doc.body?doc.body.textContent:"").replace(/\s+/g," ").trim();
+  const words=text?text.split(" ").length:0;
+  const title=(q("title")?.textContent||"").trim(),desc=q('meta[name="description"]')?.content?.trim()||"";
+  const canon=q('link[rel="canonical"]')?.href||"",h1=qa("h1"),subs=qa("h2,h3");
+  const imgs=qa("img"),alt=imgs.filter(i=>(i.getAttribute("alt")||"").trim()).length;
+  const links=qa("a[href]").map(a=>a.getAttribute("href")).filter(h=>h&&!/^(#|mailto:|tel:|javascript:)/i.test(h));
+  const ext=links.filter(h=>/^https?:/i.test(h)&&!h.includes(u.hostname)),inl=links.length-ext.length;
+  const ld=[];qa('script[type="application/ld+json"]').forEach(s=>{try{const j=JSON.parse(s.textContent);(Array.isArray(j)?j:j["@graph"]||[j]).forEach(x=>ld.push(x))}catch(e){}});
+  const types=ld.flatMap(x=>[].concat(x["@type"]||[]));const has=t=>types.includes(t);
+  const host=u.hostname.replace(/^www\./,""),dom=u.origin;
+
+  /* SEO (100) */
+  add("SEO","HTTPS",10,u.protocol==="https:"?1:0,u.protocol==="https:"?"Served over HTTPS":"Page uses HTTP",{txt:"Install an SSL certificate and redirect all HTTP URLs to HTTPS with a 301.",code:"# Apache .htaccess\nRewriteEngine On\nRewriteCond %{HTTPS} off\nRewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]"});
+  const tl=title.length;add("SEO","Title tag (40–65 characters)",10,!tl?0:(tl>=40&&tl<=65)?1:.5,tl?`"${title}" (${tl} characters)`:"No title tag found",{txt:"Write a unique, descriptive title of 40–65 characters that leads with your main topic.",code:`<title>${esc(ctx.biz||host)} | ${esc(ctx.kw.split(",")[0]||"Main service or topic")} | Location</title>`});
+  const dl=desc.length;add("SEO","Meta description (120–160 characters)",10,!dl?0:(dl>=120&&dl<=160)?1:.5,dl?`${dl} characters`:"No meta description found",{txt:"Add a meta description of 120–160 characters that summarizes the page and invites the click.",code:'<meta name="description" content="Write a 120–160 character summary of this page, with one concrete fact and a clear benefit.">'});
+  add("SEO","Canonical tag",10,canon?1:0,canon?"Canonical: "+canon:"No canonical link found",{txt:"Add a canonical link to prevent duplicate-URL issues.",code:`<link rel="canonical" href="${esc(u.href)}">`},"Medium");
+  add("SEO","Mobile viewport",10,q('meta[name="viewport"]')?1:0,q('meta[name="viewport"]')?"Viewport meta tag found":"No viewport meta tag",{txt:"Add the viewport tag so the page scales on phones.",code:'<meta name="viewport" content="width=device-width, initial-scale=1">'});
+  add("SEO","Single H1 heading",10,h1.length===1?1:h1.length>1?.5:0,h1.length+" H1 heading(s)"+(h1[0]?': "'+h1[0].textContent.trim().slice(0,80)+'"':""),{txt:"Use exactly one H1 that states the page topic, then H2/H3 for sections.",code:"<h1>Main topic of this page</h1>"});
+  add("SEO","Image alt text",10,imgs.length?alt/imgs.length:null,imgs.length?`${alt} of ${imgs.length} images have alt text`:"No images found",{txt:"Give every meaningful image a short descriptive alt attribute.",code:'<img src="photo.jpg" alt="Describe what the image shows">'},"Medium");
+  add("SEO","Internal links",10,inl>=5?1:inl>0?.5:0,inl+" internal link(s)",{txt:"Link to your key service and information pages from this page.",code:'<a href="/services">Our services</a>'},"Low");
+  add("SEO","Language declaration",5,doc.documentElement.getAttribute("lang")?1:0,"lang="+(doc.documentElement.getAttribute("lang")||"missing"),{txt:"Declare the page language.",code:'<html lang="en">'},"Low");
+  add("SEO","Open Graph tags",7,q('meta[property="og:title"]')&&q('meta[property="og:description"]')?1:q('meta[property="og:title"]')?.5:0,q('meta[property="og:title"]')?"og:title found":"No Open Graph tags",{txt:"Add Open Graph tags for better link previews.",code:`<meta property="og:title" content="${esc(title||"Page title")}">\n<meta property="og:description" content="${esc(desc||"Page summary")}">\n<meta property="og:url" content="${esc(u.href)}">`},"Low");
+  const rbOk=rb&&rb.code===200&&/user-agent/i.test(rb.body);
+  add("SEO","robots.txt",8,rbOk?1:0,rbOk?"robots.txt found":"robots.txt not found (HTTP "+(rb?rb.code:"n/a")+")",{txt:"Create /robots.txt and point to your sitemap.",code:`User-agent: *\nAllow: /\n\nSitemap: ${dom}/sitemap.xml`},"Medium");
+  const smOk=(sm&&sm.code===200&&/<(urlset|sitemapindex)/i.test(sm.body))||(rbOk&&/^sitemap:/im.test(rb.body));
+  add("SEO","XML sitemap",10,smOk?1:0,smOk?"Sitemap found":"No sitemap at /sitemap.xml or in robots.txt",{txt:"Publish an XML sitemap and submit it in Google Search Console.",code:`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${esc(u.href)}</loc></url>\n</urlset>`},"Medium");
+  const perf=psi&&psi.lighthouseResult?psi.lighthouseResult.categories.performance.score*100:null;
+  if(perf!==null){const a=psi.lighthouseResult.audits;add("SEO","Mobile performance (Google PageSpeed)",20,perf/100,`Score ${Math.round(perf)}; LCP ${a["largest-contentful-paint"]?.displayValue||"n/a"}; CLS ${a["cumulative-layout-shift"]?.displayValue||"n/a"}; TBT ${a["total-blocking-time"]?.displayValue||"n/a"}`,{txt:"Compress images, defer non-critical JavaScript, enable caching and use a CDN.",code:'<img src="hero.webp" width="1200" height="600" loading="lazy" alt="...">'},"Medium")}
+  else nt("SEO","Mobile performance (Google PageSpeed)",20,"PageSpeed API did not respond (quota or network). Add a key in CFG.psiKey.");
+
+  /* AEO (100) */
+  const faqS=has("FAQPage"),howS=has("HowTo");
+  add("AEO","FAQPage schema",15,faqS?1:0,faqS?"FAQPage structured data found":"No FAQPage schema",{txt:"Add FAQPage JSON-LD that mirrors visible FAQ content on the page.",code:`<script type="application/ld+json">\n{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does ${esc(ctx.biz||host)} do?","acceptedAnswer":{"@type":"Answer","text":"Write a clear 40–60 word answer here."}}]}\n<\/script>`},"Medium");
+  const fp=qa("p").map(p=>p.textContent.trim()).find(t=>t.split(" ").length>=8)||"";const fw=fp?fp.split(" ").length:0;
+  add("AEO","Direct answer in opening paragraph",15,fw>=50?1:fw>=30?.5:0,fw?`Opening paragraph is ${fw} words (aim for 50+ with one concrete fact)`:"No opening paragraph found",{txt:"Open with a 50–60 word paragraph that answers the page's main question and includes one concrete fact.",code:`<p>${esc(ctx.biz||host)} is [what you are] that helps [who] with [what], based in [place] since [year]. We offer [services] and [concrete fact].</p>`});
+  const qh=subs.filter(h=>/^(what|how|why|when|is|are|can|do|does|which|who)\b/i.test(h.textContent.trim())).length;
+  add("AEO","Question-based H2/H3 headings",15,qh>=3?1:qh>0?.5:0,`${qh} question headings out of ${subs.length} subheadings`,{txt:"Rewrite at least three subheadings as the questions your customers ask.",code:"<h2>What does [service] include?</h2>\n<h2>How long does [process] take?</h2>"},"Medium");
+  const faqC=qa("details,summary,[class*=faq],[id*=faq]").length>0||subs.some(h=>/faq|frequently asked/i.test(h.textContent));
+  add("AEO","FAQ section in content",10,faqC?1:0,faqC?"FAQ section detected":"No FAQ section detected",{txt:"Add a visible FAQ section with 5–10 genuine customer questions.",code:'<section id="faq"><h2>Frequently asked questions</h2>...</section>'},"Medium");
+  add("AEO","HowTo schema (where steps exist)",10,howS?1:0,howS?"HowTo schema found":"No HowTo schema found. Only needed if the page contains step-by-step instructions.",{txt:"If the page explains a process, mark it up with HowTo JSON-LD.",code:'{"@context":"https://schema.org","@type":"HowTo","name":"How to ...","step":[{"@type":"HowToStep","name":"Step 1","text":"..."}]}'},"Low");
+  const li=qa("li").length,tb=qa("table").length;
+  add("AEO","Structured lists and tables",10,li+tb>=8?1:li+tb>0?.5:0,`${li} list items, ${tb} tables`,{txt:"Present steps, features and comparisons as lists or tables.",code:"<ul><li>Feature one</li><li>Feature two</li></ul>"},"Low");
+  const sents=text.split(/[.!?]+\s/).filter(s=>s.split(" ").length>2),avg=sents.length?Math.round(words/sents.length):0;
+  add("AEO","Readability (average sentence length)",10,!avg?null:avg<=20?1:avg<=25?.5:0,avg?`Average ${avg} words per sentence`:"Not enough text",{txt:"Shorten long sentences to about 15–20 words.",code:""},"Low");
+  add("AEO","Content depth",10,words>=600?1:words>=300?.5:0,`${words} words of visible text`,{txt:"Expand thin pages with useful, specific detail and examples.",code:""},"Medium");
+  add("AEO","Semantic HTML landmarks",5,(q("main")?1:0)+(q("nav")?1:0)+(q("header")?1:0)>=2?1:.5,`main:${q("main")?"yes":"no"} nav:${q("nav")?"yes":"no"} header:${q("header")?"yes":"no"}`,{txt:"Use header, nav, main and footer landmarks.",code:"<header>…</header><nav>…</nav><main>…</main><footer>…</footer>"},"Low");
+
+  /* GEO (100) */
+  if(rbOk){let n=0;BOTS.forEach(([b,o])=>{const ok=robotsAllows(rb.body,b);if(ok)n++;
+    add("GEO","AI crawler: "+b,50/BOTS.length,ok?1:0,(ok?"Allowed":"Blocked")+" in robots.txt — "+o,{txt:`Remove the Disallow rule that blocks ${b} if you want AI systems to access this site.`,code:`User-agent: ${b}\nAllow: /`},"High")})}
+  else add("GEO","AI crawler access (robots.txt)",50,1,"No robots.txt found, so no AI crawlers are blocked by robots rules. CDN/WAF blocking is Not Tested.",null,"Low");
+  const f=r=>r&&r.code===200&&r.body.trim().length>20&&!/<html/i.test(r.body.slice(0,300));
+  add("GEO","llms.txt (optional signal)",10,f(l1)?1:0,f(l1)?"llms.txt found":"llms.txt not found (HTTP "+(l1?l1.code:"n/a")+"). Optional; not a Google ranking factor.",{txt:"Publish /llms.txt summarizing your site for AI systems. Optional, with no guaranteed effect.",code:`# ${ctx.biz||host}\n> One-sentence description of the business.\n\n## Key pages\n- [Services](${dom}/services): What we offer\n- [Contact](${dom}/contact): How to reach us`},"Low");
+  add("GEO","llms-full.txt / llms-small.txt and /.well-known/ai.txt",5,(f(l2)||f(l3)||f(ai))?1:0,(f(l2)||f(l3)||f(ai))?"Variant AI file found":"None found (optional)",{txt:"Optional: add llms-full.txt or /.well-known/ai.txt.",code:""},"Low");
+  const org=ld.find(x=>[].concat(x["@type"]||[]).some(t=>/Organization|LocalBusiness|Corporation/.test(t)));
+  add("GEO","Organization schema",12,org?1:0,org?"Organization schema found":"No Organization/LocalBusiness schema",{txt:"Add Organization JSON-LD so AI systems recognize your brand as an entity.",code:`<script type="application/ld+json">\n{"@context":"https://schema.org","@type":"Organization","name":"${esc(ctx.biz||host)}","url":"${esc(dom)}","logo":"${esc(dom)}/logo.png","email":"info@${esc(host)}","sameAs":["https://www.linkedin.com/company/your-company"]}\n<\/script>`});
+  add("GEO","sameAs social/profile links",8,org&&org.sameAs?1:0,org&&org.sameAs?"sameAs links present":"No sameAs links in schema",{txt:"List your official profiles in the sameAs array.",code:'"sameAs":["https://www.linkedin.com/company/…","https://www.facebook.com/…"]'},"Medium");
+  const ac=links.some(h=>/about/i.test(h)),cc=links.some(h=>/contact/i.test(h));
+  add("GEO","About and Contact pages linked",8,(ac?.5:0)+(cc?.5:0),`About: ${ac?"yes":"no"}, Contact: ${cc?"yes":"no"}`,{txt:"Link clearly to About and Contact pages.",code:'<a href="/about">About</a> <a href="/contact">Contact</a>'},"Medium");
+  add("GEO","External source citations",7,ext.length>=3?1:ext.length?.5:0,ext.length+" external link(s)",{txt:"Cite authoritative sources for facts and statistics.",code:""},"Low");
+  const facts=qa("p").filter(p=>/\d/.test(p.textContent)).length;
+  add("GEO","Factual, extractable statements",10,facts>=3?1:facts?.5:0,facts+" paragraph(s) with numbers or concrete facts",{txt:"State concrete facts, figures and definitions in plain sentences.",code:""},"Low");
+  step(92,"Building dashboard…");
+  return{url:u.href,host,date:new Date(),checks,crawled:"1 page (single-URL audit)",biz:ctx.biz,perf};
+}
+
+/* ===== scoring ===== */
+function scoreOf(checks,m){const c=checks.filter(x=>x.m===m&&x.st!=="na"&&x.st!=="nt");const mx=c.reduce((a,x)=>a+x.max,0);return mx?Math.round(c.reduce((a,x)=>a+x.pts,0)/mx*100):0}
+const band=s=>s>=90?"Excellent":s>=80?"Very Good":s>=70?"Good":s>=60?"Average":s>=40?"Needs Improvement":"Critical";
+const col=s=>s>=80?"#16a34a":s>=60?"#1769e0":s>=40?"#d97706":"#dc2626";
+function finalize(r){r.S=scoreOf(r.checks,"SEO");r.A=scoreOf(r.checks,"AEO");r.G=scoreOf(r.checks,"GEO");
+  r.O=Math.round(r.S*CFG.weights.SEO+r.A*CFG.weights.AEO+r.G*CFG.weights.GEO);return r}
+
+/* ===== dashboard ===== */
+const ICON={pass:"✓",warn:"!",fail:"×",na:"–",nt:"?"},LBL={pass:"Pass",warn:"Warning",fail:"Fail",na:"Not applicable",nt:"Not tested"};
+function ring(l,s,big){return`<div class="sc ${big?"big":""}"><div class="ring" style="--p:${s};--c:${col(s)}"><b>${s}</b></div><b>${l}</b><small>${band(s)}</small></div>`}
+function checkHTML(c){return`<details class="chk ${c.st}"><summary><span class="dot">${ICON[c.st]}</span><span class="t">${esc(c.t)}${c.st==="fail"||c.st==="warn"?`<span class="sev ${c.sev}">${c.sev}</span>`:""}</span><span class="p">${c.st==="nt"||c.st==="na"?LBL[c.st]:c.pts+"/"+Math.round(c.max*10)/10+" pts"}</span></summary>
+<div class="body"><p><b>Evidence:</b> ${esc(c.ev)}<br><b>Affected URL:</b> ${esc(c.url)}</p>${c.fix&&c.st!=="pass"?`<p><b>How to fix:</b> ${esc(c.fix.txt)}</p>${c.fix.code?`<pre>${esc(c.fix.code)}</pre><p class="hint">Proposed change using details detected on your site. It has not been applied.</p>`:""}`:""}</div></details>`}
+function render(r){
+  $("dTitle").textContent="Audit results for "+r.host;
+  $("scores").innerHTML=ring("Overall",r.O,1)+ring("SEO",r.S)+ring("AEO",r.A)+ring("GEO",r.G);
+  const c=r.checks,n=s=>c.filter(x=>x.st===s).length;
+  $("stats").innerHTML=[`${c.length} checks`,`${n("pass")} passed`,`${n("warn")} warnings`,`${n("fail")} failed`,`${n("nt")+n("na")} not tested / n.a.`,"Audited "+r.date.toLocaleString(),"Crawl: "+r.crawled].map(x=>`<span class="stat">${esc(x)}</span>`).join("");
+  r.top=c.filter(x=>x.st==="fail"||x.st==="warn").sort((a,b)=>(b.max-b.pts)-(a.max-a.pts)).slice(0,5);
+  $("top5").innerHTML=r.top.length?r.top.map(checkHTML).join(""):'<p>No failed checks. Nice work.</p>';
+  const mods=[["SEO","SEO & Technical"],["AEO","AEO"],["GEO","GEO & AI Crawlers"]];
+  $("tabs").innerHTML=mods.map(([k,l],i)=>`<button class="tab" role="tab" data-m="${k}" aria-selected="${i===0}">${l}</button>`).join("");
+  const show=k=>{$("list").innerHTML=c.filter(x=>x.m===k).map(checkHTML).join("");[...document.querySelectorAll(".tab")].forEach(t=>t.setAttribute("aria-selected",t.dataset.m===k))};
+  document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>show(t.dataset.m));show("SEO");
+  if(!$("re").value)$("rb").value=r.biz||"";
+}
+
+/* ===== PDF ===== */
+function loadLogo(){return new Promise(res=>{const i=new Image();i.onload=()=>{try{const c=document.createElement("canvas");c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext("2d").drawImage(i,0,0);LOGO=c.toDataURL("image/png")}catch(e){LOGO=null}res()};i.onerror=()=>res();i.src="logo.png"})}
+function buildPDF(r){
+  const {jsPDF}=window.jspdf,d=new jsPDF({unit:"mm",format:"a4"}),W=210,M=14,CW=W-2*M;let y=40;
+  const rgb=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+  const fill=h=>d.setFillColor(...rgb(h)),txt=h=>d.setTextColor(...rgb(h));
+  const need=h=>{if(y+h>278){d.addPage();y=40}};
+  const para=(t,sz=9.5,c="#26405f",b=false,gap=1.5)=>{d.setFont("helvetica",b?"bold":"normal");d.setFontSize(sz);txt(c);d.splitTextToSize(String(t),CW).forEach(l=>{need(5);d.text(l,M,y);y+=sz*.46+1});y+=gap};
+  const h2=t=>{need(14);y+=3;fill("#1769e0");d.rect(M,y-4.5,1.6,6,"F");para(t,13,"#0b2447",true,3)};
+  // cover block
+  fill("#eef6ff");d.roundedRect(M,y-4,CW,50,3,3,"F");
+  txt("#0b2447");d.setFont("helvetica","bold");d.setFontSize(20);d.text("Website SEO, AEO & GEO Audit Report",M+6,y+6);
+  d.setFont("helvetica","normal");d.setFontSize(10);txt("#26405f");d.text(r.url,M+6,y+13);d.text("Audited: "+r.date.toLocaleString()+(r.biz?"   |   "+r.biz:""),M+6,y+19);
+  fill(r.O>=80?"#16a34a":r.O>=60?"#1769e0":r.O>=40?"#d97706":"#dc2626");d.circle(M+22,y+34,11,"F");
+  txt("#ffffff");d.setFont("helvetica","bold");d.setFontSize(20);d.text(String(r.O),M+22,y+36.5,{align:"center"});
+  txt("#0b2447");d.setFontSize(13);d.text("Overall Website Readiness: "+band(r.O),M+38,y+31);
+  d.setFont("helvetica","normal");d.setFontSize(9);txt("#26405f");d.text("SEO x 40%  +  AEO x 30%  +  GEO x 30%",M+38,y+37);
+  y+=56;
+  [["SEO",r.S],["AEO",r.A],["GEO",r.G]].forEach(([l,s],i)=>{const x=M+i*(CW/3+1),w=CW/3-2;fill("#ffffff");d.setDrawColor(...rgb("#d6e6fb"));d.roundedRect(x,y,w,26,2,2,"FD");
+    txt("#5a7391");d.setFontSize(9);d.setFont("helvetica","bold");d.text(l,x+w/2,y+6,{align:"center"});txt(col(s));d.setFontSize(20);d.text(String(s),x+w/2,y+16,{align:"center"});d.setFontSize(8.5);d.text(band(s),x+w/2,y+22,{align:"center"})});
+  y+=34;
+  const c=r.checks,n=s=>c.filter(x=>x.st===s).length;
+  para(`Summary: ${c.length} checks run on ${r.host}. ${n("pass")} passed, ${n("warn")} warnings, ${n("fail")} failed, ${n("nt")+n("na")} not tested or not applicable. Crawl coverage: ${r.crawled}.`);
+  h2("Top recommendations");
+  (r.top.length?r.top:[]).forEach(x=>{para(`[${x.sev.toUpperCase()}] ${x.t}  (+${Math.round((x.max-x.pts)*10)/10} pts)`,10,"#0b2447",true,0);para(x.ev,9,"#5a7391",false,0);if(x.fix)para("Fix: "+x.fix.txt,9,"#26405f",false,2.5)});
+  if(!r.top.length)para("No failed checks were found.");
+  [["SEO","SEO & Technical Findings",r.S],["AEO","AEO: Answer Engine Readiness",r.A],["GEO","GEO: AI Crawler & Generative Readiness",r.G]].forEach(([k,l,s])=>{
+    d.addPage();y=40;h2(`${l}  -  ${s}/100 (${band(s)})`);
+    c.filter(x=>x.m===k).forEach(x=>{need(16);const cc={pass:"#16a34a",warn:"#d97706",fail:"#dc2626",na:"#8aa0bb",nt:"#8aa0bb"}[x.st];
+      fill(cc);d.circle(M+2,y-1.2,1.6,"F");d.setFont("helvetica","bold");d.setFontSize(10);txt("#0b2447");d.text(x.t.slice(0,70),M+6,y);
+      d.setFont("helvetica","normal");d.setFontSize(9);txt("#5a7391");d.text(x.st==="nt"||x.st==="na"?LBL[x.st]:x.pts+"/"+Math.round(x.max*10)/10+" pts",W-M,y,{align:"right"});y+=4.6;
+      d.splitTextToSize(x.ev,CW-6).forEach(l=>{need(5);d.text(l,M+6,y);y+=4});
+      if(x.fix&&x.st!=="pass"&&x.fix.code){const lines=d.splitTextToSize(x.fix.code,CW-14).slice(0,8);need(lines.length*3.6+6);fill("#0b2447");d.roundedRect(M+6,y-1,CW-6,lines.length*3.6+4,1.5,1.5,"F");d.setFont("courier","normal");d.setFontSize(7.5);txt("#dff0ff");lines.forEach((l,i)=>d.text(l,M+9,y+3+i*3.6));y+=lines.length*3.6+6}
+      y+=2.5})});
+  d.addPage();y=40;h2("Optimization roadmap");
+  const hi=c.filter(x=>x.sev==="High"&&(x.st==="fail"||x.st==="warn")),me=c.filter(x=>x.sev==="Medium"&&(x.st==="fail"||x.st==="warn")),lo=c.filter(x=>x.sev==="Low"&&(x.st==="fail"||x.st==="warn"));
+  [["Next 7 days: critical fixes",hi],["Next 30 days: important improvements",me],["Next 90 days: ongoing optimization",lo]].forEach(([t,a])=>{para(t,10.5,"#0b2447",true,1);if(a.length)a.forEach(x=>para("- "+x.t,9.5,"#26405f",false,0));else para("- Nothing outstanding at this level.",9.5,"#5a7391",false,0);y+=2});
+  h2("Methodology, data sources and limitations");
+  [`Scores are independent Tech and Support scores (SEO 0-100, AEO 0-100, GEO 0-100; overall = SEO x 40% + AEO x 30% + GEO x 30%). They are not official Google or AI platform scores.`,
+   `Data sources: the audited page's HTML, robots.txt, sitemap, llms.txt and ai.txt files, and the Google PageSpeed Insights API where available. Crawl coverage: ${r.crawled}.`,
+   `Checks marked Not Tested lacked evidence and are excluded from the score. Not applicable checks are also excluded.`,
+   `GEO measures technical AI readiness only. Whether ChatGPT, Gemini, Perplexity or Copilot actually mention or cite your business was Not Tested.`,
+   `Code examples are proposed changes generated from detected site details. They have not been applied to your website.`].forEach(t=>para("- "+t,9));
+  h2("Need help implementing these fixes?");
+  para("Tech and Support can implement technical SEO, AEO, GEO, structured data, performance and security improvements for you.",10);
+  para(`Website: ${CO.site}   |   Email: ${CO.mail}   |   Support: ${CO.support}   |   WhatsApp: ${CO.tel}`,10,"#1769e0",true);
+  // header/footer on every page
+  const N=d.getNumberOfPages();
+  for(let p=1;p<=N;p++){d.setPage(p);fill("#eef6ff");d.rect(0,0,W,30,"F");fill("#1769e0");d.rect(0,30,W,1,"F");
+    if(LOGO)d.addImage(LOGO,"PNG",M,4,22,22);
+    txt("#0b2447");d.setFont("helvetica","bold");d.setFontSize(14);d.text(CO.name,M+26,13);
+    d.setFont("helvetica","normal");d.setFontSize(8.5);txt("#26405f");d.text(CO.tag,M+26,18.5);
+    d.setFontSize(8);d.text(CO.site,W-M,10,{align:"right"});d.text(CO.mail+"  |  "+CO.support,W-M,15,{align:"right"});d.text("WhatsApp "+CO.tel,W-M,20,{align:"right"});
+    d.setDrawColor(...rgb("#d6e6fb"));d.line(M,285,W-M,285);txt("#5a7391");d.setFontSize(8);
+    d.text(`${CO.name}  |  ${CO.site}  |  ${CO.mail}  |  ${CO.tel}`,M,290);d.text(`Page ${p} of ${N}`,W-M,290,{align:"right"})}
+  return d;
+}
+const fname=r=>`Tech-and-Support-Website-Audit-${r.host}-${r.date.toISOString().slice(0,10)}.pdf`;
+const msg=(t,ok)=>{const m=$("dmsg");m.textContent=t;m.className="msg "+(ok?"ok":"bad")};
+
+/* ===== events ===== */
+$("go").onclick=async()=>{
+  $("err").textContent="";let u;try{u=normUrl($("url").value)}catch(e){$("err").textContent=e;return}
+  const b=$("go");b.disabled=true;b.textContent="Analyzing…";$("dash").style.display="block";$("results").hidden=true;$("progWrap").hidden=false;msg("");
+  $("dash").scrollIntoView({behavior:"smooth"});
+  try{if(!LOGO)await loadLogo();R=finalize(await runAudit(u));step(100,"Done.");render(R);$("results").hidden=false;$("progWrap").hidden=true;$("progTxt").textContent=""}
+  catch(e){$("progWrap").hidden=true;$("progTxt").textContent="";$("err").textContent=typeof e==="string"?e:"Something went wrong. Please try again.";$("dash").style.display="none"}
+  b.disabled=false;b.textContent="Start Free Website Audit";
+};
+$("url").addEventListener("keydown",e=>{if(e.key==="Enter")$("go").click()});
+$("dl").onclick=()=>{if(!R)return;try{buildPDF(R).save(fname(R));msg("PDF downloaded.",true)}catch(e){msg("PDF could not be created.",false)}};
+$("em").onclick=async()=>{
+  if(!R)return;const to=$("re").value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)){msg("Enter a valid email address.",false);return}
+  if(!CFG.emailEndpoint){msg("Email delivery is Not Configured on this site yet. Download the PDF instead, or contact "+CO.support+".",false);return}
+  const b=$("em");b.disabled=true;b.textContent="Sending…";
+  try{const pdf=buildPDF(R).output("datauristring").split(",")[1];
+    const r=await fetch(CFG.emailEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({to,name:$("rn").value,business:$("rb").value,website:R.url,scores:{seo:R.S,aeo:R.A,geo:R.G,overall:R.O},filename:fname(R),pdfBase64:pdf})});
+    if(!r.ok)throw 0;msg("Your report was accepted for delivery to "+to+".",true)}
+  catch(e){msg("The report could not be emailed. Please try again or download the PDF.",false)}
+  b.disabled=false;b.textContent="Email My PDF Report";
+};
+</script>
+</body>
+</html>
