@@ -205,15 +205,16 @@ async function one(t,ms){
 async function get(u,ms=9000){
   const e=encodeURIComponent(u),w=(CFG.worker||"").replace(/\/+$/,"");
   const own=[];if(w)own.push(w+"/?url="+e);own.push("api.php?url="+e);
-  const mine=await Promise.all(own.map(f=>one({f,raw:1},ms).catch(()=>null)));
-  const hit=mine.find(x=>x&&x.be);if(hit){hit.src="backend";return hit}   // our own backend answered: definitive
+  const mine=await Promise.all(own.map(f=>one({f,raw:1},Math.max(ms,25000)).catch(()=>null)));
+  const hit=mine.find(x=>x&&x.be);if(hit){hit.src="backend";return hit}
+  const dg=mine.map((x,i)=>x?own[i]+" answered HTTP "+x.code+" but is not the backend (file missing, not running as PHP, or a PHP error)":own[i]+(location.protocol==="file:"?" cannot work when index.html is opened from your computer (file://). Open it from https://tools.techandsupport.com/ instead":" did not respond (blocked, timed out, or the page is not served from the same site as api.php)")).join("; ");   // our own backend answered: definitive
   const pub=[{f:"https://api.allorigins.win/get?url="+e},{f:"https://api.codetabs.com/v1/proxy?quest="+e,raw:1},{f:"https://corsproxy.io/?url="+e,raw:1}];
   let fb=null;
   return new Promise(resolve=>{let left=pub.length;
     const done=()=>{if(--left===0)resolve(fb)};
     pub.forEach(t=>one(t,ms).then(res=>{
       if(res.code>=200&&res.code<300&&res.body)resolve(res);
-      else{if(!fb&&res.code){fb=res;fb.src="proxy"}done()}
+      else{if(!fb&&res.code){fb=res;fb.src="proxy";fb.dg=dg}done()}
     }).catch(done))});
 }
 function normUrl(v){
@@ -242,7 +243,7 @@ async function runAudit(u){
   step(10,"Fetching your page and site files…");
   const [page,rb,sm,l1,l2,l3,ai]=await Promise.all([get(u.href),get(base+"/robots.txt"),get(base+"/sitemap.xml"),get(base+"/llms.txt"),get(base+"/llms-full.txt"),get(base+"/llms-small.txt"),get(base+"/.well-known/ai.txt")]);
   if(!page)throw"We could not reach the page. Check the URL and try again.";
-  if(!(page.code>=200&&page.code<300)||!page.body)throw(page.code===401||page.code===403||page.code===429?(page.src==="backend"?"Your website blocked the audit request (HTTP "+page.code+") even from the Tech and Support server. In your firewall, Cloudflare or security plugin, allow the user agent TechAndSupportAuditBot, turn off bot-blocking or basic-auth for this URL, and try again.":"The free public fetch services were refused (HTTP "+page.code+"). The Tech and Support backend was not found. Upload api.php to the same folder as index.html (or set the Worker URL in the config), then try again."):page.code===404?"The page returned HTTP 404 (not found). Check the URL.":"The website returned HTTP "+page.code+", so it could not be analyzed.");
+  if(!(page.code>=200&&page.code<300)||!page.body)throw(page.code===401||page.code===403||page.code===429?(page.src==="backend"?"Your website blocked the audit request (HTTP "+page.code+") even from the Tech and Support server. In your firewall, Cloudflare or security plugin, allow the user agent TechAndSupportAuditBot, turn off bot-blocking or basic-auth for this URL, and try again.":"The free public fetch services were refused (HTTP "+page.code+"). The Tech and Support backend was not found. Upload api.php to the same folder as index.html (or set the Worker URL in the config), then try again. Diagnostic: "+(page.dg||"n/a")+"."):page.code===404?"The page returned HTTP 404 (not found). Check the URL.":"The website returned HTTP "+page.code+", so it could not be analyzed.");
   step(70,"Scoring checks…");
   const A=(cat,t,max,ratio,ev,why,o={})=>{const st=ratio===null?"na":ratio>=1?"pass":ratio>0?"warn":"fail";
     checks.push({cat,t,max,pts:ratio===null?0:n1(max*ratio),st,ev,why,rec:o.rec||"Improve: "+t,body:o.body,txt:o.txt,code:o.code,url:u.href})};
